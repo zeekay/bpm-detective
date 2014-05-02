@@ -1,0 +1,21 @@
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix vamp:     <http://purl.org/ontology/vamp/> .
+@prefix :         <#> .
+
+:transform a vamp:Transform ;
+    vamp:plugin <http://vamp-plugins.org/rdf/plugins/vamp-example-plugins#fixedtempo> ;
+    vamp:step_size "64"^^xsd:int ; 
+    vamp:block_size "256"^^xsd:int ; 
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "maxbpm" ] ;
+        vamp:value "190"^^xsd:float ;
+    ] ;
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "maxdflen" ] ;
+        vamp:value "10"^^xsd:float ;
+    ] ;
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "minbpm" ] ;
+        vamp:value "50"^^xsd:float ;
+    ] ;
+    vamp:output <http://vamp-plugins.org/rdf/plugins/vamp-example-plugins#fixedtempo_output_tempo> .
